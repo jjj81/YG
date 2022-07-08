@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Worker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="submit" value="start" onclick="submit()">
+    <br />
+    <input type="submit" value="查询" onclick="search()">
+
+    <script type="text/javascript">
+        var shuju = null;
+        var url='http://localhost:8080/worker';
+        function submit() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    alert(xhr.response);
+                    console.log(xhr.response);
+                }
+            }
+            xhr.open('get', 'http://localhost:8080/worker', true);
+            xhr.send();
+        }
+        function search() {
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    shuju = data;
+                    console.log(shuju);
+                }
+
+            })
+        }
+        console.log(shuju);
+    </script>
+</body>
+
+</html>

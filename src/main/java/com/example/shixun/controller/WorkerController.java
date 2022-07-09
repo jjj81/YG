@@ -44,4 +44,9 @@ public class WorkerController {
     String sw(){
         return "worker";
     }
+
+    @GetMapping("/worker/order")
+    List<Worker> or(){
+        return workerMapper.orderByP();
+    }
 }

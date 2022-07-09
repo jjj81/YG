@@ -20,5 +20,8 @@ public interface WorkerMapper extends BaseMapper<Worker> {
     @Delete(" delete from Worker where job_number=#{job_number};")
     void deleteWorker(Worker  worker);
 
+    @Select("select * from Worker order by product")
+    List<Worker> orderByP();
+
 
 }

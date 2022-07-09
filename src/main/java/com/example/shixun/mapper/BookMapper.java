@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper {
-    @Insert("insert into Book ( isbn,book_name,book_publish,book_number,price) values ( #{isbn},#{book_name},#{book_publish},#{book_number},#{price})")
+    @Insert("insert into Book ( isbn,book_name,book_publish,book_number,price,author) values ( #{isbn},#{book_name},#{book_publish},#{book_number},#{price},#{author})")
     void insertBook(Book book);
 
     @Select("Select * from Book")

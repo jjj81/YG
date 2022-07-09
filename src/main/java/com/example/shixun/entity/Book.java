@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.stereotype.Repository;
 
 @Data
-@Repository
+
 public class Book {
     private int id;
     int isbn;

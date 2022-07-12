@@ -3,6 +3,7 @@ package com.example.shixun.controller;
 import com.example.shixun.entity.Book;
 import com.example.shixun.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +36,8 @@ public class BookController {
     List<Book> orderByBook(){
         return bookMapper.orderByPrice();
     }
+
+
 
 
 }

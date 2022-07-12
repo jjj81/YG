@@ -5,10 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class SchoolCalendarController {
+public class TemplatesController {
     @RequestMapping("/schoolCalendar")
     String RSchoolCalendar(){
         return "schoolCalendar";
+    }
+    @GetMapping("/worker/addHt")
+    String addHt(){
+        return "add_worker";
+    }
+
+    @GetMapping("/test")
+    String test(){
+        return  "test";
     }
 
 

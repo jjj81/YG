@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<h2>add_worker</h2>
+  <h2>add_worker</h2>
 
-<form>
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" ><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" >
-</form>
+  <form method="post" action="http://localhost:8080/worker/add">
+    <label for="name"> name:</label><br>
+    <input type="text" id="fname"><br>
+    <label for="job_number">job_number:</label><br>
+    <input type="text" id="job_number"><br>
+    <label for="xi_bie">xi_bie:</label><br>
+    <input type="text" id="xi_bie"><br>
+    <label for="age">age:</label><br>
+    <input type="text" id="age"><br>
+    <label for="bu_men">bu_men:</label><br>
+    <input type="text" id="bu_men"><br>
+    <label for="dian_hua">dian_hua:</label><br>
+    <input type="text" id="dian_hua"><br>
+    <label for="product">product:</label><br>
+    <input type="text" id="product"><br>
+    <input type="submit" value="submit">
 
-<input type="submit" value="submit" onclick="search()">
+  </form>
+  
+  
+  <script>
+  $.ajax({
+    type: "POST",
+    url: "serverUrl",
+    data: formData,
+    success: function(){},
+    dataType: "json",
+    contentType : "application/json"
+  });
+  </script>
+
+
 
 </body>
+
 </html>
